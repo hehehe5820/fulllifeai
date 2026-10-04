@@ -16,7 +16,7 @@ android.archs = arm64-v8a
 
 android.permissions = INTERNET,ACCESS_NETWORK_STATE
 
-requirements = python3,kivy,charset-normalizer==3.5.2 --no-binary=charset-normalizer
+requirements = python3,kivy,charset-normalizer==3.5.2 
 
 android.debug = True
 android.enable_androidx = True
