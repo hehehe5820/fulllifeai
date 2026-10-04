@@ -12,8 +12,6 @@ android.minapi = 24
 android.sdk = 24
 android.ndk = 25
 
-android.archs = arm64-v8a
-
 android.permissions = INTERNET,ACCESS_NETWORK_STATE
 
 requirements = python3,kivy,charset-normalizer==3.5.2 
