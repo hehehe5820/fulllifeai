@@ -9,7 +9,8 @@ android 14
 android.api = 33
 android.minapi = 24
 android.sdk = 24
-android.ndk = 25b
+android.ndk = 25
+android.archs = arm64-v8a
 android.permissions = INTERNET,ACCESS_NETWORK_STATE  INTERNET   ACCESS_NETWORK_STATE   READ_EXTERNAL_STORAG   WRITE_EXTERNAL_STORAGE   AMERA   ECORD_AUDIO
 requirements = python3,kivy
 android.debug = True
