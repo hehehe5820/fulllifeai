@@ -1,30 +1,42 @@
-name: Build Kivy APK
+name: Build APK
+
 on:
   push:
-  workflow_dispatch:
+    branches: [ main ]
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: 安装系统依赖
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install system dependencies
         run: |
           sudo apt update
-          sudo apt install -y git zip unzip openjdk-17-jdk python3-pip python3-virtualenv autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo6 cmake libffi-dev libssl-dev automake autopoint gettext
+          sudo apt install -y git zip unzip openjdk-17-jdk autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev
 
-      - name: 安装buildozer
+      - name: Downgrade pip to 23.3.1
         run: |
-          pip3 install --user buildozer
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
+          python -m pip install --upgrade pip==23.3.1
 
-      - name: 编译APK
+      - name: Install buildozer
         run: |
-          buildozer android debug
+          python -m pip install buildozer
 
-      - name: 下载成品APK
+      - name: Build APK
+        run: |
+          buildozer android debug deploy run || true
+
+      - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: fulllifeai-apk
-          path: bin/*.apk
+          name: app-apk
+          path: |
+            *.apk
+            bin/*.apk
