@@ -1,8 +1,7 @@
 [app]
 title = 全智能生命体
 package.name = QZNSMT
-# org.AFEI.cn
-package.domain = org.fulllifeai
+package.domain = org.AFEI.cn
 version =1.0.0
 source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
