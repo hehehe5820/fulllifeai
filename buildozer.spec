@@ -14,7 +14,6 @@ android.ndk = 25
 
 android.permissions = INTERNET,ACCESS_NETWORK_STATE
 
-requirements = python3,kivy
 android.debug = True
 android.enable_androidx = True
 android.accept_sdk_license = True
