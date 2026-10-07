@@ -10,7 +10,7 @@ source.include_exts = py,png,jpg,kv,atlas
 android.api = 33
 android.minapi = 24
 android.sdk = 24
-android.ndk = 25
+android.ndk = 25b
 
 android.permissions = INTERNET,ACCESS_NETWORK_STATE
 
