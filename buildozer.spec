@@ -11,7 +11,7 @@ android.api = 33
 android.minapi = 24
 android.ndk = 25b
 
-requirements = python3,kivy,charset-normalizer==3.5.2
+requirements = python3,kivy
 
 android.permissions = INTERNET,ACCESS_NETWORK_STATE
 
